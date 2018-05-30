@@ -7,11 +7,15 @@ job('test_job_1') {
   }
   triggers {
     // githubPush()
-    scm('* * * * *')
+    // scm('* * * * *')
+    ghprbTrigger {
+      cron('* * * * *')
+      includedRegions('test_job_1/.*')
+    }
   }
   steps {
     groovyCommand 'println "hello from groovy"'
-    shell 'echo hello from sh'
+    shell readFileFromWorkspace('test_job_1/jenkins.sh')
   }
   /*
   publishers {
