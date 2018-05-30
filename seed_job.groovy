@@ -5,10 +5,12 @@ job('test_job_1') {
   scm {
     github('swegner/jenkins_playground', 'master')
   }
+  /*
   publishers {
     git {
       branch('origin', 'job_output')
       pushOnlyIfSuccess
     }
   }
+  */
 }
