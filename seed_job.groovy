@@ -6,7 +6,8 @@ job('test_job_1') {
     github('swegner/jenkins_playground', 'master')
   }
   steps {
-    groovyCommand 'println "hello world"'
+    groovyCommand 'println "hello from groovy"'
+    shell 'echo hello from sh'
   }
   /*
   publishers {
