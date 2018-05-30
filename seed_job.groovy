@@ -7,7 +7,7 @@ job('test_job_1') {
   }
   publishers {
     git {
-      branch('https://github.com/swegner/jenkins_playground.git', 'job_output')
+      branch('origin', 'job_output')
       pushOnlyIfSuccess
     }
   }
