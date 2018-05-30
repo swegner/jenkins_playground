@@ -1,1 +1,1 @@
-// Empty
+job('empty job')
