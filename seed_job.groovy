@@ -5,6 +5,9 @@ job('test_job_1') {
   scm {
     github('swegner/jenkins_playground', 'master')
   }
+  triggers {
+    githubPush()
+  }
   steps {
     groovyCommand 'println "hello from groovy"'
     shell 'echo hello from sh'
