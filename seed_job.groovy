@@ -5,6 +5,9 @@ job('test_job_1') {
   scm {
     github('swegner/jenkins_playground', 'master')
   }
+  steps {
+    groovyCommand 'println "hello world"'
+  }
   /*
   publishers {
     git {
